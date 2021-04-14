@@ -39,7 +39,7 @@ public class Enemy : EnemyBaseClass
                 ChangeState(EnemyState.walk);
                 anim.SetBool("WakeUp", true);
             }
-        } else if (Vector2.Distance(transform.position,target.position)>=chaseRadius) {
+        } else if (Vector2.Distance(transform.position,target.position)>chaseRadius) {
             anim.SetBool("WakeUp",false);
         }
     }
