@@ -29,7 +29,7 @@ public class Enemy : EnemyBaseClass
 
     void CheckDistance()
     {
-        if (Vector2.Distance(transform.position,target.position)<chaseRadius&& touched == false &&
+        if (Vector2.Distance(transform.position,target.position)<=chaseRadius&& touched == false &&
             Vector2.Distance(transform.position,target.position)>attackRadius)
         {
             // @ts-ignore
@@ -39,7 +39,9 @@ public class Enemy : EnemyBaseClass
                 ChangeState(EnemyState.walk);
                 anim.SetBool("WakeUp", true);
             }
-        } else anim.SetBool("WakeUp",false);
+        } else if (Vector2.Distance(transform.position,target.position)>chaseRadius) {
+            anim.SetBool("WakeUp",false);
+        }
     }
 
 

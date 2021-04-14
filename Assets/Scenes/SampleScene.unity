@@ -7791,7 +7791,7 @@ MonoBehaviour:
   health: 15
   enemyName: Harmit
   baseAttack: 12
-  chaseRadius: 0
+  chaseRadius: 10
   attackRadius: 3
   enemyMoveSpeed: 4
   anim: {fileID: 0}
