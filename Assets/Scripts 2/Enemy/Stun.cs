@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Stun : MonoBehaviour
 {   
     public float knockback;
+    public int damage;
 
+    private void Update() {
+        
+    }
     // -----------------Apply enemy stun and player knockback-------------------------
     private IEnumerator OnTriggerEnter2D(Collider2D other) {
         Rigidbody2D rb = other.gameObject.GetComponent<Rigidbody2D>();
@@ -20,6 +25,8 @@ public class Stun : MonoBehaviour
                 Vector2 difference = rb.transform.position - transform.position;
                 difference = difference.normalized*knockback;                               //Apply knockback
                 rb.AddForce(difference,ForceMode2D.Impulse);
+                
+                
 
                 for (float i = 0.4f; i < 0.8f; i+=0.2f)
                 {
@@ -38,6 +45,8 @@ public class Stun : MonoBehaviour
             if (rb!=null ) {
                 
                 rb.GetComponent<Enemy>().currentState = EnemyState.stagger;                 //Start stagger
+
+                rb.GetComponent<Enemy>().TakeDamage(damage);
 
                 for (float i = 0.4f; i < 0.8f; i+=0.2f)
                 {

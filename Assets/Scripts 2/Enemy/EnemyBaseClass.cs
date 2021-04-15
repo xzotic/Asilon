@@ -11,7 +11,19 @@ public enum EnemyState{
 public class EnemyBaseClass : MonoBehaviour
 {
     public EnemyState currentState;
+    public int maxHealth;
     public int health;
     public string enemyName;
     public int baseAttack;
+
+    private void Awake() {
+        health = maxHealth;
+    }
+
+    public void TakeDamage(int damage){
+        health -= damage;
+        if (health<=0){
+            this.gameObject.SetActive(false);
+        }
+    }
 }
