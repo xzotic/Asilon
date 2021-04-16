@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float MoveSpeed;
+    [SerializeField] private float moveSpeed;
 
     public PlayerState CurrentState;
     public Rigidbody2D rb;
     public Animator animator;
     private NpcController npc;
-    private bool InRange;
+    private bool InRange; 
+    public int currentHealth;
+    public int maxHealth;
 
     Vector2 movement;
 
@@ -30,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("Horizontal",0);
         animator.SetFloat("Vertical",-1);
+        currentHealth = maxHealth;
     }
 
     void FixedUpdate()
@@ -73,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Vertical",movement.y);
             animator.SetBool("Moving", true);
             movement.Normalize();
-            rb.MovePosition(rb.position + movement*MoveSpeed*Time.fixedDeltaTime);
+            rb.MovePosition(rb.position + movement*moveSpeed*Time.fixedDeltaTime);
         } else animator.SetBool("Moving", false);
     }
 
@@ -97,5 +100,10 @@ public class PlayerMovement : MonoBehaviour
     private void StartDialogue()
     {
         if (InRange == true && Input.GetKeyDown(KeyCode.E)) npc.ActivateDialogue();
+    }
+
+    public void PlayerTakeDamage(int damage){
+        currentHealth -= damage;
+        if (currentHealth<=0) this.gameObject.SetActive(false);
     }
 }

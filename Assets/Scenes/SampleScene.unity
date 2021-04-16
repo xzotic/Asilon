@@ -7640,8 +7640,8 @@ GameObject:
   - component: {fileID: 514447566}
   - component: {fileID: 514447565}
   - component: {fileID: 514447570}
-  - component: {fileID: 514447571}
   - component: {fileID: 514447572}
+  - component: {fileID: 514447571}
   m_Layer: 0
   m_Name: Harmit
   m_TagString: Enemy
@@ -7788,7 +7788,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  health: 15
+  maxHealth: 15
+  health: 3
   enemyName: Harmit
   baseAttack: 12
   chaseRadius: 10
@@ -7808,6 +7809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockback: 50
+  damage: 0
 --- !u!95 &514447572
 Animator:
   serializedVersion: 3
@@ -8886,7 +8888,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4133c466f30e39e04bbba49b42f574d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockback: 0
+  knockback: 50
+  damage: 5
 --- !u!61 &918268205
 BoxCollider2D:
   m_ObjectHideFlags: 0

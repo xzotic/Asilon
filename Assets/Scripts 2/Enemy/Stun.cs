@@ -25,9 +25,9 @@ public class Stun : MonoBehaviour
                 Vector2 difference = rb.transform.position - transform.position;
                 difference = difference.normalized*knockback;                               //Apply knockback
                 rb.AddForce(difference,ForceMode2D.Impulse);
-                
-                
 
+                rb.GetComponent<PlayerMovement>().PlayerTakeDamage(damage);
+                
                 for (float i = 0.4f; i < 0.8f; i+=0.2f)
                 {
                     sr.color = new Color(1,i,i,1);
@@ -46,7 +46,7 @@ public class Stun : MonoBehaviour
                 
                 rb.GetComponent<Enemy>().currentState = EnemyState.stagger;                 //Start stagger
 
-                rb.GetComponent<Enemy>().TakeDamage(damage);
+                rb.GetComponent<Enemy>().TakeDamage(damage);                                //Apply damage
 
                 for (float i = 0.4f; i < 0.8f; i+=0.2f)
                 {

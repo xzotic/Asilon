@@ -24,6 +24,7 @@ public class EnemyBaseClass : MonoBehaviour
         health -= damage;
         if (health<=0){
             this.gameObject.SetActive(false);
+            GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
         }
     }
 }
