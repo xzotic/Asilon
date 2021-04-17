@@ -14,7 +14,7 @@ public class EnemyBaseClass : MonoBehaviour
     public int maxHealth;
     public int health;
     public string enemyName;
-    public int baseAttack;
+    //public int baseAttack;
 
     private void Awake() {
         health = maxHealth;

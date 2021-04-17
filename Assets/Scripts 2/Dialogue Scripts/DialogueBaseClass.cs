@@ -10,7 +10,7 @@ namespace DialogueSystem
         public bool finished {get;protected set;}
         protected IEnumerator WriteText(string input, Text TextHolder, float delay, AudioClip sound, Text NameHolder, string NpcName) 
         {   
-            if ((GameObject.FindWithTag("DialogueBox").activeInHierarchy)==true) SoundManager.instance.PlaySound();
+            if ((GameObject.FindWithTag("DialogueBox").activeInHierarchy)==true) FindObjectOfType<AudioManager>().Play("NPC");
 
             NameHolder.text = NpcName;
 
@@ -18,7 +18,7 @@ namespace DialogueSystem
             {
                 TextHolder.text += input[i];
                 //SoundManager.instance.PlaySound(sound);
-                if (i==(input.Length-1)) SoundManager.instance.StopSound();
+                if (i==(input.Length-1)) FindObjectOfType<AudioManager>().Stop("NPC");
                 yield return new WaitForSeconds(delay);
             }
             

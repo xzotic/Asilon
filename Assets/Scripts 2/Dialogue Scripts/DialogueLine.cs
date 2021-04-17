@@ -32,7 +32,7 @@ namespace DialogueSystem
                 if (TextHolder.text != input) 
                 {
                     StopCoroutine(LineAppear);
-                    SoundManager.instance.StopSound();
+                    FindObjectOfType<AudioManager>().Stop("NPC");
                     TextHolder.text = input;
                 }
 

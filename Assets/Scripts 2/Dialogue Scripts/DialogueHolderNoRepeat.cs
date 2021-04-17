@@ -22,7 +22,7 @@ namespace DialogueSystem
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 Deactivate();
-                SoundManager.instance.StopSound();
+                FindObjectOfType<AudioManager>().Stop("NPC");
                 gameObject.SetActive(false);
                 GameObject.FindWithTag("NameBox").SetActive(false);
             }
