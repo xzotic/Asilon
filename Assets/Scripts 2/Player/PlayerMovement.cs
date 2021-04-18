@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private bool InRange; 
     public int currentHealth;
     public int maxHealth;
+    public HealthBar healthBar;
 
     Vector2 movement;
 
@@ -33,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal",0);
         animator.SetFloat("Vertical",-1);
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     void FixedUpdate()
@@ -104,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void PlayerTakeDamage(int damage){
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
         if (currentHealth<=0) this.gameObject.SetActive(false);
     }
 }

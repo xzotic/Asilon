@@ -27,6 +27,7 @@ public class Stun : MonoBehaviour
                 rb.AddForce(difference,ForceMode2D.Impulse);
 
                 rb.GetComponent<PlayerMovement>().PlayerTakeDamage(damage);
+
                 
                 for (float i = 0.4f; i < 0.8f; i+=0.2f)
                 {
