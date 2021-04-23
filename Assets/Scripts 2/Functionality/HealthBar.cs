@@ -10,12 +10,17 @@ public class HealthBar : MonoBehaviour
     public TMP_Text HPTextHolder;
     private void Start(){
         slider = this.GetComponent<Slider>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
+        slider.maxValue = playerMovement.maxHealth;
+        slider.value = playerMovement.currentHealth;
+        HPTextHolder.text = playerMovement.maxHealth.ToString();
     }
     
-    public void SetMaxHealth(int health){
+    /*ublic void SetMaxHealth(int health){
         slider.maxValue = health;
         slider.value = health;
-    }
+    }*/
 
     public void SetHealth(int health){
         slider.value = health;

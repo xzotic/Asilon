@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal",0);
         animator.SetFloat("Vertical",-1);
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        //healthBar.SetMaxHealth(maxHealth);
     }
 
     void FixedUpdate()
