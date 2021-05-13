@@ -103,12 +103,12 @@ TextureImporter:
       name: house_0
       rect:
         serializedVersion: 2
-        x: 55
-        y: 413
-        width: 145
-        height: 72
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 137
+        y: 587
+        width: 211
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -124,12 +124,12 @@ TextureImporter:
       name: house_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 181
-        width: 246
-        height: 210
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 74
+        y: 266
+        width: 352
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -145,12 +145,12 @@ TextureImporter:
       name: house_2
       rect:
         serializedVersion: 2
-        x: 8
-        y: 22
-        width: 237
-        height: 152
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 78
+        y: 18
+        width: 344
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
     public HealthBar healthBar;
+    public VectorValue StartingPosition;
 
     Vector2 movement;
 
@@ -29,12 +30,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        rb.position = StartingPosition.InitialValue;
         CurrentState = PlayerState.Walking;
         animator = GetComponent<Animator>();
         animator.SetFloat("Horizontal",0);
         animator.SetFloat("Vertical",-1);
         currentHealth = maxHealth;
-        //healthBar.SetMaxHealth(maxHealth);
     }
 
     void FixedUpdate()
