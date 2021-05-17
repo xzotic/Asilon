@@ -7,6 +7,7 @@ using UnityEngine.U2D;
 public class guiscript : MonoBehaviour
 {
     public PixelPerfectCamera cam;
+    public CanvasScaler scaler;
  
     void Start()
     {
@@ -20,7 +21,7 @@ public class guiscript : MonoBehaviour
  
     void AdjustScalingFactor()
     {
-        GetComponent<CanvasScaler>().scaleFactor = cam.pixelRatio;
+        scaler.scaleFactor = cam.pixelRatio;
     }
  
 }
