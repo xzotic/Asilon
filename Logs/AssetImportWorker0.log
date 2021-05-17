@@ -366,3 +366,7 @@ Received Import Request.
 Start importing Assets/Scenes/TestScene #1.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '560a54374537f32ff8085d641f0e786b') in 0,002476 seconds
   Import took 0,034276 seconds .
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001345 seconds.
