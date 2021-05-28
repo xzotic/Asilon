@@ -4,6 +4,6 @@ using UnityEngine;
 
 [CreateAssetMenu]
 public class HealthValue : ScriptableObject {
-    public int InitialHP;
+    [SerializeField] public int InitialHP;
 }
 

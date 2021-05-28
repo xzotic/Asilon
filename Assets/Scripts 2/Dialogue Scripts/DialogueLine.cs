@@ -11,7 +11,7 @@ namespace DialogueSystem
         [SerializeField] public Text NameHolder;
 
         [Header("Text Options")]
-        [SerializeField] private string input;
+        [SerializeField] [TextArea(1, 4)] private string input;
         [SerializeField] private float delay;
         [SerializeField] private AudioClip sound;
         [SerializeField] private string NpcName;

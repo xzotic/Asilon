@@ -36,7 +36,6 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts 2\guiscript.cs" />
      <Compile Include="Assets\Scripts 2\Route.cs" />
      <Compile Include="Assets\Scripts 2\Enemy\Stun.cs" />
      <Compile Include="Assets\Scripts 2\Dialogue Scripts\DialogueLine.cs" />
@@ -48,6 +47,7 @@
      <Compile Include="Assets\Scripts 2\Functionality\FadingSprite.cs" />
      <Compile Include="Assets\Scripts 2\RouteFollow.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\AudioManager.cs" />
+     <Compile Include="Assets\Scripts 2\Functionality\guiscript.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\LocationName.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\MainMenu.cs" />
      <Compile Include="Assets\ScriptableObjects\HealthValue.cs" />
@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts 2\Functionality\Sound.cs" />
      <Compile Include="Assets\Scripts 2\Dialogue Scripts\DialogueBaseClass.cs" />
      <Compile Include="Assets\Scripts 2\Dialogue Scripts\NpcController.cs" />
+     <Compile Include="Assets\Scripts 2\Player\ContextClues.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\SpriteOrder.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\SceneTransit.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

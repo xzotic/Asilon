@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb.position = StartingPosition.InitialValue;
+
         CurrentState = PlayerState.Walking;
         animator = GetComponent<Animator>();
         animator.SetFloat("Horizontal",0);
@@ -80,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("Moving", true);
             movement.Normalize();
             rb.MovePosition(rb.position + movement*moveSpeed*Time.fixedDeltaTime);
+            Debug.Log(rb.position);
         } else animator.SetBool("Moving", false);
     }
 
@@ -107,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void PlayerTakeDamage(int damage){
         HPValue.InitialHP -= damage;
+        UnityEditor.EditorUtility.SetDirty(HPValue);
         healthBar.SetHealth(HPValue.InitialHP);
         if (HPValue.InitialHP<=0) this.gameObject.SetActive(false);
     }
