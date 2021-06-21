@@ -17,7 +17,7 @@ public class LocationName : MonoBehaviour
             activated = true;
             go.SetActive(true);
             text.text = namae;
-            yield return new WaitForSecondsRealtime(1);
+            yield return new WaitForSecondsRealtime(2.5f);
             text.CrossFadeAlpha(0,2f,false);
             yield return new WaitForSeconds(2);
             go.SetActive(false);

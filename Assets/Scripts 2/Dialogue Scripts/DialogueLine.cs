@@ -13,16 +13,18 @@ namespace DialogueSystem
         [Header("Text Options")]
         [SerializeField] [TextArea(1, 4)] private string input;
         [SerializeField] private float delay;
-        [SerializeField] private AudioClip sound;
         [SerializeField] private string NpcName;
+        [SerializeField] private bool IsItemFind;
+        [SerializeField] private Collider2D col;
 
         private IEnumerator LineAppear;
 
         private void OnEnable() 
         {
             ResetLine();
-            LineAppear = WriteText(input,TextHolder,delay, sound, NameHolder, NpcName);
+            LineAppear = WriteText(input,TextHolder,delay,NameHolder, NpcName, IsItemFind);
             StartCoroutine(LineAppear);
+            if (IsItemFind) col.enabled=false;
         }
 
         private void Update()

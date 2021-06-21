@@ -39,9 +39,10 @@
      <Compile Include="Assets\Scripts 2\Route.cs" />
      <Compile Include="Assets\Scripts 2\Enemy\Stun.cs" />
      <Compile Include="Assets\Scripts 2\Dialogue Scripts\DialogueLine.cs" />
+     <Compile Include="Assets\ScriptableObjects\Inventory &amp; Items\Inventory.cs" />
      <Compile Include="Assets\Scripts 2\Enemy\EnemyBaseClass.cs" />
      <Compile Include="Assets\Scripts 2\Player\PlayerMovement.cs" />
-     <Compile Include="Assets\ScriptableObjects\VectorValue.cs" />
+     <Compile Include="Assets\ScriptableObjects\Player\VectorValue.cs" />
      <Compile Include="Assets\Scripts 2\Enemy\Enemy.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\SoundManager.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\FadingSprite.cs" />
@@ -50,12 +51,14 @@
      <Compile Include="Assets\Scripts 2\Functionality\guiscript.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\LocationName.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\MainMenu.cs" />
-     <Compile Include="Assets\ScriptableObjects\HealthValue.cs" />
+     <Compile Include="Assets\ScriptableObjects\Player\HealthValue.cs" />
+     <Compile Include="Assets\Scripts 2\Functionality\Chest.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\SceneLoading.cs" />
      <Compile Include="Assets\Scripts 2\Dialogue Scripts\DialogueHolder.cs" />
      <Compile Include="Assets\Scripts 2\Dialogue Scripts\DialogueHolderNoRepeat.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\HealthBar.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\Sound.cs" />
+     <Compile Include="Assets\ScriptableObjects\Inventory &amp; Items\Item.cs" />
      <Compile Include="Assets\Scripts 2\Dialogue Scripts\DialogueBaseClass.cs" />
      <Compile Include="Assets\Scripts 2\Dialogue Scripts\NpcController.cs" />
      <Compile Include="Assets\Scripts 2\Player\ContextClues.cs" />

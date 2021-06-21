@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     private NpcController npc;
-    private bool InRange; 
+    public bool InRange; 
     public int currentHealth;
     public int maxHealth;
     public HealthBar healthBar;
@@ -32,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb.position = StartingPosition.InitialValue;
-
         CurrentState = PlayerState.Walking;
         animator = GetComponent<Animator>();
         animator.SetFloat("Horizontal",0);
@@ -48,7 +47,8 @@ public class PlayerMovement : MonoBehaviour
             movement = Vector2.zero;
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-            if (CurrentState==PlayerState.Walking && CurrentState != PlayerState.stagger) UpdateAnimationAndMove();
+            if (CurrentState==PlayerState.Walking && CurrentState != PlayerState.stagger) 
+                UpdateAnimationAndMove();
         } else animator.enabled = false;
     }
 
@@ -81,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("Moving", true);
             movement.Normalize();
             rb.MovePosition(rb.position + movement*moveSpeed*Time.fixedDeltaTime);
-            Debug.Log(rb.position);
         } else animator.SetBool("Moving", false);
     }
 

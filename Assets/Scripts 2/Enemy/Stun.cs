@@ -23,6 +23,7 @@ public class Stun : MonoBehaviour
                 pmrb.CurrentState = PlayerMovement.PlayerState.stagger;                     //Start stagger
 
                 Vector2 difference = rb.transform.position - transform.position;
+                rb.GetComponent<PlayerMovement>().animator.enabled=false;
                 difference = difference.normalized*knockback;                               //Apply knockback
                 rb.AddForce(difference,ForceMode2D.Impulse);
 
@@ -36,6 +37,7 @@ public class Stun : MonoBehaviour
                 }
                 sr.color = new Color(1,1,1,1);
 
+                rb.GetComponent<PlayerMovement>().animator.enabled=true;
                 pmrb.CurrentState = PlayerMovement.PlayerState.Walking;                      //End Stagger
             }
         }

@@ -47,8 +47,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Auto Letterbox\Editor\ForceCameraRatioEditor.cs" />
-     <Compile Include="Assets\Ocias\PixelArtCamera\Editor\PixelArtCameraEditor.cs" />
+     <Compile Include="Assets\Ink\Demos\Basic Demo\Scripts\Editor\BasicInkExampleEditor.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/home/tunglam/Unity/Editors/2020.3.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -773,6 +772,11 @@
       <Name>Assembly-CSharp</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="Ink-Libraries.csproj">
+      <Project>{AB68B783-A690-4A94-70F4-60D9BCF47DA4}</Project>
+      <Name>Ink-Libraries</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
       <Project>{D14EBE62-4223-C8F2-71B0-3257CFBF9BE8}</Project>
       <Name>Unity.2D.Tilemap.Extras</Name>
@@ -781,6 +785,11 @@
     <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
       <Project>{1AEBDE5E-153B-0522-8717-9582779CD39E}</Project>
       <Name>Unity.2D.Tilemap.Extras.Editor</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="InkEditor.csproj">
+      <Project>{6F3711C9-A051-9941-4905-26B499F6E9A8}</Project>
+      <Name>InkEditor</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>

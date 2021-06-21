@@ -15,7 +15,7 @@ public class HealthBar : MonoBehaviour
         PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
         slider.maxValue = playerMovement.maxHealth;
         slider.value = HPValue.InitialHP;
-        HPTextHolder.text = HPValue.InitialHP.ToString();
+        HPTextHolder.text = HPValue.InitialHP.ToString("00");
     }
     
     /*ublic void SetMaxHealth(int health){
