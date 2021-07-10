@@ -3,9 +3,10 @@ using System;
 using System.Collections;
 
 public class ContextClues : MonoBehaviour {
-    public SpriteRenderer sr;
+    private SpriteRenderer sr;
     public Sprite sprite;
     private void Start(){
+        sr= GameObject.FindGameObjectWithTag("Player").transform.GetChild(4).GetComponent<SpriteRenderer>();
         sr.gameObject.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D other) {

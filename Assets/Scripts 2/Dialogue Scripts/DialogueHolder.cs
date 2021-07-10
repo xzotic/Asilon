@@ -22,6 +22,8 @@ namespace DialogueSystem
                 FindObjectOfType<AudioManager>().Stop("NPC");
                 gameObject.SetActive(false);
                 GameObject.FindWithTag("NameBox").SetActive(false);
+                (GameObject.FindWithTag("SpriteBox")).SetActive(false);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().CurrentState = PlayerMovement.PlayerState.Walking;
             }
         }
 
@@ -35,6 +37,7 @@ namespace DialogueSystem
             }
             gameObject.SetActive(false);
             (GameObject.FindWithTag("NameBox")).SetActive(false);
+            (GameObject.FindWithTag("SpriteBox")).SetActive(false);
         }
 
         private void Deactivate()

@@ -7,24 +7,30 @@ namespace DialogueSystem
 {
     public class DialogueLine : DialogueBaseClass
     {
+        public static bool ItemFound;
         [SerializeField] private Text TextHolder;
         [SerializeField] public Text NameHolder;
+        [SerializeField] private Image ImageHolder;
 
         [Header("Text Options")]
         [SerializeField] [TextArea(1, 4)] private string input;
         [SerializeField] private float delay;
         [SerializeField] private string NpcName;
+        [SerializeField] private Sprite CharSprite;
+
+        [Header("Chest things")]
+        [SerializeField] private Item item;
+        [SerializeField] private Inventory inventory;
+        [SerializeField] private Collider2D TriggerCol;
         [SerializeField] private bool IsItemFind;
-        [SerializeField] private Collider2D col;
 
         private IEnumerator LineAppear;
-
         private void OnEnable() 
         {
             ResetLine();
-            LineAppear = WriteText(input,TextHolder,delay,NameHolder, NpcName, IsItemFind);
+            LineAppear = WriteText(input,TextHolder,delay,NameHolder, NpcName, IsItemFind, ImageHolder, CharSprite, item, inventory);
             StartCoroutine(LineAppear);
-            if (IsItemFind) col.enabled=false;
+            if (IsItemFind) TriggerCol.enabled=false;
         }
 
         private void Update()
@@ -38,7 +44,10 @@ namespace DialogueSystem
                     TextHolder.text = input;
                 }
 
-                else finished = true;
+                else {
+                    finished = true; 
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().CurrentState = PlayerMovement.PlayerState.Walking;
+                }
             }
         }
 

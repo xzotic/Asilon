@@ -9,7 +9,7 @@ public class LocationName : MonoBehaviour
     public Text text;
     public string namae;
     public GameObject go;
-    public bool activated;
+    public static bool activated;
     
     private IEnumerator OnTriggerEnter2D(Collider2D other) {
         if (!go.activeInHierarchy && !activated && other.CompareTag("Player"))

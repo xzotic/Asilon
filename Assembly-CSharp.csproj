@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts 2\Route.cs" />
+     <Compile Include="Assets\Scripts 2\Functionality\CamShake.cs" />
      <Compile Include="Assets\Scripts 2\Enemy\Stun.cs" />
      <Compile Include="Assets\Scripts 2\Dialogue Scripts\DialogueLine.cs" />
      <Compile Include="Assets\ScriptableObjects\Inventory &amp; Items\Inventory.cs" />
@@ -53,6 +54,8 @@
      <Compile Include="Assets\Scripts 2\Functionality\MainMenu.cs" />
      <Compile Include="Assets\ScriptableObjects\Player\HealthValue.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\Chest.cs" />
+     <Compile Include="Assets\Scripts 2\Enemy\Bullet.cs" />
+     <Compile Include="Assets\Scripts 2\Enemy\PatrolEnemy.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\SceneLoading.cs" />
      <Compile Include="Assets\Scripts 2\Dialogue Scripts\DialogueHolder.cs" />
      <Compile Include="Assets\Scripts 2\Dialogue Scripts\DialogueHolderNoRepeat.cs" />
@@ -64,6 +67,7 @@
      <Compile Include="Assets\Scripts 2\Player\ContextClues.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\SpriteOrder.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\SceneTransit.cs" />
+     <Compile Include="Assets\Scripts 2\Enemy\Projectile.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

@@ -8,6 +8,8 @@ TagManager:
   - DialogueBox
   - NameBox
   - Enemy
+  - SpriteBox
+  - CMCam
   layers:
   - Default
   - TransparentFX

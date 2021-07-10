@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         StartDialogue();
-        if (!InDialogue())
+        if (CurrentState!=PlayerState.Interacting)
         {
             animator.enabled = true;
             movement = Vector2.zero;
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!InDialogue())
+        if (CurrentState!=PlayerState.Interacting)
         {
             if (Input.GetButtonDown("Attack")&&CurrentState!=PlayerState.Attacking) {
                 StartCoroutine(AttackCo());

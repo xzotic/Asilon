@@ -26,6 +26,7 @@ public class Stun : MonoBehaviour
                 rb.GetComponent<PlayerMovement>().animator.enabled=false;
                 difference = difference.normalized*knockback;                               //Apply knockback
                 rb.AddForce(difference,ForceMode2D.Impulse);
+                GameObject.FindGameObjectWithTag("CMCam").GetComponent<CamShake>().BeginKick();
 
                 rb.GetComponent<PlayerMovement>().PlayerTakeDamage(damage);
 
@@ -49,7 +50,7 @@ public class Stun : MonoBehaviour
                 
                 rb.GetComponent<Enemy>().currentState = EnemyState.stagger;                 //Start stagger
 
-                rb.GetComponent<Enemy>().TakeDamage(damage);                                //Apply damage
+                StartCoroutine(rb.GetComponent<Enemy>().TakeDamage(damage));                                //Apply damage
 
                 for (float i = 0.4f; i < 0.8f; i+=0.2f)
                 {

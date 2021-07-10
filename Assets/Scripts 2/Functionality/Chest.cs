@@ -2,25 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chest : ContextClues
+public class Chest : MonoBehaviour
 {
     public Item contents;
-    public bool IsOpen;
-    public GameObject dialogWindow;
-    public TextMesh DialogText;
-    void Start()
-    {
-        GetComponent<PlayerMovement>();
-    }
+    public static bool IsOpen;
+    public Inventory PlayerInventory;
+    [SerializeField] private Collider2D col;
+    /*private void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("Player")&&!IsOpen) {
+            PlayerInventory.AddItem(contents);
+            PlayerInventory.CurrentItem=contents;
+        }
+    }*/
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !IsOpen && GetComponent<PlayerMovement>().InRange) {
-
-        }
-    }
-
-    public void OpenChest() {
-        
+        if (col.enabled == false) IsOpen = true;
+        if (IsOpen) col.enabled=false;
     }
 }

@@ -330,7 +330,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.8125, y: 2.34375}
+    oldSize: {x: 0.90625, y: 2.34375}
     newSize: {x: 0.16, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneToLoad: TestScene #1
-  PlayerPosition: {x: 7, y: 8, z: 0}
+  PlayerPosition: {x: -25, y: 7, z: 0}
   PlayerStorage: {fileID: 11400000, guid: f4beeca3064114eec8f8015ce528af65, type: 2}
 --- !u!1 &1723024953
 GameObject:
