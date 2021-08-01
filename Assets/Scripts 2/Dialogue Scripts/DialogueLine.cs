@@ -24,6 +24,7 @@ namespace DialogueSystem
         [SerializeField] private Collider2D TriggerCol;
         [SerializeField] private bool IsItemFind;
 
+
         private IEnumerator LineAppear;
         private void OnEnable() 
         {
@@ -35,7 +36,7 @@ namespace DialogueSystem
 
         private void Update()
         {
-            if ((Input.GetKeyDown(KeyCode.Space)))
+            if ((Input.GetKeyDown(KeyCode.Space))&&GameObject.FindGameObjectsWithTag("DialogueChoiceButton").Length==0)
             {
                 if (TextHolder.text != input) 
                 {

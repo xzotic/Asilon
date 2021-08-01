@@ -46,7 +46,7 @@ public class Enemy : EnemyBaseClass
     }
 
 
-    private void ChangeState(EnemyState NewState) {
+    public void ChangeState(EnemyState NewState) {
         if (currentState!=NewState) currentState = NewState;
     }
 

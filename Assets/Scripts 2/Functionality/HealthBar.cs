@@ -17,11 +17,6 @@ public class HealthBar : MonoBehaviour
         slider.value = HPValue.InitialHP;
         HPTextHolder.text = HPValue.InitialHP.ToString("00");
     }
-    
-    /*ublic void SetMaxHealth(int health){
-        slider.maxValue = health;
-        slider.value = health;
-    }*/
 
     public void SetHealth(int health){
         slider.value = health;

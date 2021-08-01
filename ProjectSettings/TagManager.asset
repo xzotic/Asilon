@@ -10,6 +10,9 @@ TagManager:
   - Enemy
   - SpriteBox
   - CMCam
+  - Coin
+  - UIButtonCheck
+  - DialogueChoiceButton
   layers:
   - Default
   - TransparentFX
@@ -18,8 +21,8 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
-  - 
+  - Enemy
+  - Enemy Projectile
   - 
   - 
   - 

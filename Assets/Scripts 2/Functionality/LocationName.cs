@@ -6,7 +6,7 @@ using TMPro;
 
 public class LocationName : MonoBehaviour
 {   
-    public Text text;
+    public TMP_Text text;
     public string namae;
     public GameObject go;
     public static bool activated;

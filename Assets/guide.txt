@@ -1,0 +1,21 @@
+Normal Dialogue:
+-Create a new Dialogue prefab
+-Edit Name and text options in DialogueLine script (Text child object in DialogueBox)
+-Add NpcController, trigger collider 2d script to NPC gameobject
+-Change DB/Name/Image to that of the corresponding character and DialogueBox
+-Change Sprite component to that of the text popup bubble thing (... for NPC, ! for objects)
+-Change NPC object tag to "Interactable" (very important)
+
+
+Branching Dialogue:
+-Create normal dialogue
+-Add n DialogueBox as child to text that needs branching
+-Add options holder gameobject in main DialogueBox (or both idk)
+-Add reply options text to child DialogueBox's
+(!! Branching dialogues can only have one main Text object as of now dont know how fix !!)
+
+Enemy:
+-Add enemy sprites and colliders and RigidBody2D and shit (Trigger collider 2d must be set as child object no idea why)
+-Add Enemy Script (Patrol Enemy for patrolling enemies and turret for shooting enemies and both for both) (if there is patrol enemy no need normal enemy, turret does need normal enemy tho)
+-Add tag and layer "Enemy", layer "Enemy Projectile" for enemy projectiles
+-Add Stun script

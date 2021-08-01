@@ -14,6 +14,7 @@ public class EnemyBaseClass : MonoBehaviour
     public int maxHealth;
     public int health;
     public string enemyName;
+    public LootTable thisloot;
     //public int baseAttack;
 
     private void Awake() {
@@ -30,19 +31,30 @@ public class EnemyBaseClass : MonoBehaviour
             yield return null;
         }
     }
+    private void MakeLoot(){
+        if (thisloot != null){
+            GameObject current = thisloot.LootLoot();
+            if (current != null) {
+                Instantiate(current.gameObject, transform.position, Quaternion.identity);
+            }
+        }
+    }
 
 
     public IEnumerator TakeDamage(int damage){
         health -= damage;
         if (health<=0){
             SpriteRenderer a = this.GetComponent<SpriteRenderer>();
+            this.transform.GetChild(0).GetComponent<Collider2D>().enabled=false;
             for (float i = 1f; i > 0.5f; i-=0.05f)
                 {
                     a.color = new Color(i,i,i,1);
                     yield return new WaitForSeconds(0.04f);                                 //Apply Color change
                 }
+            MakeLoot();
             StartCoroutine(FadeTo(0.0f,0.6f));
-            this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
+            //this.gameObject.SetActive(false);
             GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
         }
     }

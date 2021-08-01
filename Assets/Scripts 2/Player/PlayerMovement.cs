@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
+    using UnityEditor;
+#endif
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public HealthBar healthBar;
     public VectorValue StartingPosition;
     public HealthValue HPValue;
+    public MoneyValue moneyValue;
 
     Vector2 movement;
 
@@ -56,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (CurrentState!=PlayerState.Interacting)
         {
-            if (Input.GetButtonDown("Attack")&&CurrentState!=PlayerState.Attacking) {
+            if (Input.GetButtonDown("Attack")&&CurrentState==PlayerState.Walking) {
                 StartCoroutine(AttackCo());
             }
         }
@@ -86,8 +90,15 @@ public class PlayerMovement : MonoBehaviour
 
     //Check in range of dialogue
     private void OnTriggerEnter2D(Collider2D collision){
-        if (collision.gameObject.tag == "Interactable") InRange = true;
-        npc = collision.gameObject.GetComponent<NpcController>();
+        if (collision.gameObject.tag == "Interactable") {InRange = true;
+            npc = collision.gameObject.GetComponent<NpcController>();}
+        if (collision.CompareTag("Coin")){
+                int amount = collision.GetComponent<Coin>().value;
+                moneyValue.money+=amount;
+                #if UNITY_EDITOR
+                EditorUtility.SetDirty(moneyValue);
+                #endif
+            }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -108,7 +119,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void PlayerTakeDamage(int damage){
         HPValue.InitialHP -= damage;
-        UnityEditor.EditorUtility.SetDirty(HPValue);
+        #if UNITY_EDITOR
+            EditorUtility.SetDirty(HPValue);
+        #endif
         healthBar.SetHealth(HPValue.InitialHP);
         if (HPValue.InitialHP<=0) this.gameObject.SetActive(false);
     }
