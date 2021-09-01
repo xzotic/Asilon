@@ -102,7 +102,7 @@ TextureImporter:
         serializedVersion: 2
         x: 28
         y: 53
-        width: 36
+        width: 37
         height: 100
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -121,10 +121,10 @@ TextureImporter:
       name: PoisonIvy_1
       rect:
         serializedVersion: 2
-        x: 85
+        x: 86
         y: 123
-        width: 5
-        height: 16
+        width: 16
+        height: 6
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -19,3 +19,8 @@ Enemy:
 -Add Enemy Script (Patrol Enemy for patrolling enemies and turret for shooting enemies and both for both) (if there is patrol enemy no need normal enemy, turret does need normal enemy tho)
 -Add tag and layer "Enemy", layer "Enemy Projectile" for enemy projectiles
 -Add Stun script
+
+Enemy animator:
+-Parameters: +) moveX, moveY (float, movement direction)
+             +) WakeUp       (bool, set aggro)
+             +)IsAttack      (bool, set is attack)

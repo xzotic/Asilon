@@ -39,14 +39,19 @@ namespace DialogueSystem
                 GameObject thingy = transform.GetChild(i).gameObject; 
                 thingy.SetActive(true);
                 yield return new WaitUntil(()=> transform.GetChild(i).GetComponent<DialogueLine>().finished);
+
                 if (IsOptionYes(thingy)){ //
+
                     for (int a=0;a<thingy.transform.childCount;a++){//
                         thingy.GetComponent<Text>().text="";//
                         OptionHolder.transform.GetChild(a).gameObject.SetActive(true);//
                         OptionHolder.transform.GetChild(a).GetComponentInChildren<Text>().text=thingy.transform.GetChild(a).GetComponent<DialogueHolder>().reply; //
                     }//
+
                     GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().CurrentState = PlayerMovement.PlayerState.Interacting;//
+
                     yield return new WaitUntil(()=>CheckIfButtonPress()==true);//
+
                     thingy.GetComponent<Text>().text = "";
                     transform.gameObject.GetComponent<Image>().enabled=false;
                     GameObject.FindGameObjectWithTag("UIButtonCheck").GetComponent<ButtonCheck>().ispressed = false;//
@@ -54,8 +59,10 @@ namespace DialogueSystem
                     for (int a=0;a<thingy.transform.childCount;a++){//
                         OptionHolder.transform.GetChild(a).gameObject.SetActive(false);//
                     }
+
                     thingy.transform.GetChild(GameObject.FindGameObjectWithTag("UIButtonCheck").GetComponent<ButtonCheck>().AnswerNo).gameObject.SetActive(true);//
                     yield return new WaitUntil(()=> thingy.transform.GetChild(GameObject.FindGameObjectWithTag("UIButtonCheck").GetComponent<ButtonCheck>().AnswerNo).gameObject.activeInHierarchy == false);
+                    transform.gameObject.GetComponent<Image>().enabled=true;
                 } //
             }
             gameObject.SetActive(false);

@@ -8,7 +8,7 @@ public class HealthBar : MonoBehaviour
 {
     private Slider slider;
     public TMP_Text HPTextHolder;
-    public HealthValue HPValue;
+    public GlobalManager HPValue;
     private void Start(){
         slider = this.GetComponent<Slider>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");

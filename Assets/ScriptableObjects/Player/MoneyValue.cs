@@ -4,5 +4,5 @@ using UnityEngine;
 
 [CreateAssetMenu]
 public class MoneyValue : ScriptableObject {
-    [SerializeField] public int money;
+    public int money;
 }

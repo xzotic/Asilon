@@ -373,6 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ProgressBar: {fileID: 954546860}
+  globe: {fileID: 11400000, guid: 67191ef0857b3879eb46820ec0e26386, type: 2}
 --- !u!114 &1338933039
 MonoBehaviour:
   m_ObjectHideFlags: 0

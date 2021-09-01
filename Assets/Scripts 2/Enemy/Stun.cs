@@ -20,7 +20,7 @@ public class Stun : MonoBehaviour
             SpriteRenderer sr = other.gameObject.GetComponent<SpriteRenderer>();
             if (rb!=null) {
                 
-                pmrb.CurrentState = PlayerMovement.PlayerState.stagger;                     //Start stagger
+                pmrb.CurrentState = PlayerMovement.PlayerState.Stagger;                     //Start stagger
 
                 Vector2 difference = rb.transform.position - transform.position;
                 rb.GetComponent<PlayerMovement>().animator.enabled=false;

@@ -73,8 +73,10 @@
      <Compile Include="Assets\Scripts 2\Player\ContextClues.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\SpriteOrder.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\SceneTransit.cs" />
+     <Compile Include="Assets\Scripts 2\Enemy\MeleeEnemy.cs" />
      <Compile Include="Assets\Scripts 2\ButtonCheck.cs" />
      <Compile Include="Assets\Scripts 2\Functionality\Coin.cs" />
+     <Compile Include="Assets\ScriptableObjects\Other\GlobalManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

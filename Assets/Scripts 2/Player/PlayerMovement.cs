@@ -17,9 +17,9 @@ public class PlayerMovement : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
     public HealthBar healthBar;
-    public VectorValue StartingPosition;
-    public HealthValue HPValue;
-    public MoneyValue moneyValue;
+    public GlobalManager global;
+    private bool IsPause;
+    [SerializeField] private GameObject PauseMenu;
 
     Vector2 movement;
 
@@ -30,12 +30,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public enum PlayerState{
-        Walking, Attacking, Interacting,stagger
+        Walking, Attacking, Interacting,Stagger,Pause
     };
 
     void Start()
     {
-        rb.position = StartingPosition.InitialValue;
+        Time.timeScale = 1;
+        rb.position = global.InitialValue;
         CurrentState = PlayerState.Walking;
         animator = GetComponent<Animator>();
         animator.SetFloat("Horizontal",0);
@@ -51,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             movement = Vector2.zero;
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-            if (CurrentState==PlayerState.Walking && CurrentState != PlayerState.stagger) 
+            if (CurrentState==PlayerState.Walking && CurrentState != PlayerState.Stagger) 
                 UpdateAnimationAndMove();
         } else animator.enabled = false;
     }
@@ -62,6 +63,22 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetButtonDown("Attack")&&CurrentState==PlayerState.Walking) {
                 StartCoroutine(AttackCo());
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab)){
+            if (IsPause ==true){
+                IsPause = false;
+                Time.timeScale = 1;
+                CurrentState = PlayerState.Walking;
+                PauseMenu.SetActive(false);
+
+            }
+            else {
+                IsPause = true;
+                Time.timeScale = 0;
+                CurrentState = PlayerState.Pause;
+                PauseMenu.SetActive(true);
             }
         }
     }
@@ -80,6 +97,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (movement != Vector2.zero)
         {
+            movement.x = Mathf.Round(movement.x);
+            movement.y = Mathf.Round(movement.y);
             animator.SetFloat("Horizontal",movement.x);
             animator.SetFloat("Vertical",movement.y);
             animator.SetBool("Moving", true);
@@ -94,9 +113,9 @@ public class PlayerMovement : MonoBehaviour
             npc = collision.gameObject.GetComponent<NpcController>();}
         if (collision.CompareTag("Coin")){
                 int amount = collision.GetComponent<Coin>().value;
-                moneyValue.money+=amount;
+                global.money+=amount;
                 #if UNITY_EDITOR
-                EditorUtility.SetDirty(moneyValue);
+                EditorUtility.SetDirty(global);
                 #endif
             }
     }
@@ -118,11 +137,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void PlayerTakeDamage(int damage){
-        HPValue.InitialHP -= damage;
+        global.InitialHP -= damage;
         #if UNITY_EDITOR
-            EditorUtility.SetDirty(HPValue);
+            EditorUtility.SetDirty(global);
         #endif
-        healthBar.SetHealth(HPValue.InitialHP);
-        if (HPValue.InitialHP<=0) this.gameObject.SetActive(false);
+        healthBar.SetHealth(global.InitialHP);
+        if (global.InitialHP<=0) { 
+            healthBar.SetHealth(0);
+            this.gameObject.SetActive(false);
+        }
     }
 }

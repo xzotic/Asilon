@@ -9,7 +9,7 @@ public class Enemy : EnemyBaseClass
     public float chaseRadius;
     public float attackRadius;
     //public Transform homePosition;
-    public int enemyMoveSpeed;
+    public float enemyMoveSpeed;
     public bool touched;
     public Animator anim;
     
@@ -32,17 +32,21 @@ public class Enemy : EnemyBaseClass
         if (Vector2.Distance(transform.position,target.position)<=chaseRadius&& touched == false &&
             Vector2.Distance(transform.position,target.position)>attackRadius)
         {
-            // @ts-ignore
+            //anim.SetBool("IsMove",true);
             if (currentState == EnemyState.idle || currentState == EnemyState.walk) {  
+                anim.SetBool("WakeUp", true);
                 Vector3 temp = Vector2.MoveTowards(transform.position,target.position,enemyMoveSpeed*Time.deltaTime);
                 ChangeAnim(temp-transform.position);
                 rigid.MovePosition(temp);
                 ChangeState(EnemyState.walk);
-                anim.SetBool("WakeUp", true);
             }
+       
         } else if (Vector2.Distance(transform.position,target.position)>chaseRadius) {
             anim.SetBool("WakeUp",false);
+            ChangeState(EnemyState.idle);
         }
+        //if (Vector2.Distance(transform.position,target.position)<=attackRadius) anim.SetBool("IsMove",false);
+        //else anim.SetBool("IsMove",true);
     }
 
 
@@ -70,16 +74,4 @@ public class Enemy : EnemyBaseClass
             }
         }
     }
-
-    /*void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag=="Player") touched = true;
-        //Debug.Log(touched);
-    }
-
-    void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.tag=="Player") touched = false;
-        //Debug.Log(touched);
-    }*/
 }

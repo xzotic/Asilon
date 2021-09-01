@@ -13,7 +13,7 @@ public class PatrolEnemy : Enemy
         if (Vector2.Distance(transform.position,target.position)<=chaseRadius&& touched == false &&
             Vector2.Distance(transform.position,target.position)>attackRadius)
         {
-            // @ts-ignore
+            
             if (currentState == EnemyState.idle || currentState == EnemyState.walk) {  
                 Vector3 temp = Vector2.MoveTowards(transform.position,target.position,enemyMoveSpeed*Time.deltaTime);
                 anim.SetBool("WakeUp", true);
