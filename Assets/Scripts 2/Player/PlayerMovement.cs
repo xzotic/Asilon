@@ -9,17 +9,24 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
 
+    [Header("General")]
     public PlayerState CurrentState;
     public Rigidbody2D rb;
     public Animator animator;
     private NpcController npc;
+    public Inventory2 inventory;
+    public HealthBar healthBar;
+    public GlobalManager global;
+    [SerializeField] private GameObject PauseMenu;
+    [SerializeField] public InvUi UIInventory;
+
+    [Header("Variables")]
     public bool InRange; 
     public int currentHealth;
     public int maxHealth;
-    public HealthBar healthBar;
-    public GlobalManager global;
-    private bool IsPause;
-    [SerializeField] private GameObject PauseMenu;
+
+    public bool IsPause;
+    public bool IsInventory;
 
     Vector2 movement;
 
@@ -41,11 +48,14 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("Horizontal",0);
         animator.SetFloat("Vertical",-1);
+
+        inventory = new Inventory2();
+        UIInventory.gameObject.SetActive(false);
     }
 
     void FixedUpdate()
     {
-        StartDialogue();
+        
         if (CurrentState!=PlayerState.Interacting)
         {
             animator.enabled = true;
@@ -54,11 +64,16 @@ public class PlayerMovement : MonoBehaviour
             movement.y = Input.GetAxisRaw("Vertical");
             if (CurrentState==PlayerState.Walking && CurrentState != PlayerState.Stagger) 
                 UpdateAnimationAndMove();
-        } else animator.enabled = false;
+        } else {
+            animator.enabled = false;
+        }
     }
 
     void Update()
     {
+        global.VectorValue = rb.position;
+        StartDialogue();
+        
         if (CurrentState!=PlayerState.Interacting)
         {
             if (Input.GetButtonDown("Attack")&&CurrentState==PlayerState.Walking) {
@@ -66,7 +81,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab)){
+        PauseAndInvUI();
+    }
+
+    private void PauseAndInvUI() {
+        if (Input.GetKeyDown(KeyCode.Escape)&&CurrentState!=PlayerState.Interacting && IsInventory==false){
             if (IsPause ==true){
                 IsPause = false;
                 Time.timeScale = 1;
@@ -81,6 +100,28 @@ public class PlayerMovement : MonoBehaviour
                 PauseMenu.SetActive(true);
             }
         }
+
+        /**if (Input.GetKeyDown(KeyCode.BackQuote)&&CurrentState!=PlayerState.Interacting && IsPause == false){
+            if (IsInventory ==true){
+                IsInventory = false;
+                Time.timeScale = 1;
+                CurrentState = PlayerState.Walking;
+                foreach (Transform child in UIInventory.ItemSlotContainer) {
+                    Destroy(child.gameObject);
+                }
+
+                UIInventory.gameObject.SetActive(false);
+                UIInventory.ItemSlotTemplate.gameObject.SetActive(true);
+            }
+            else {
+                IsInventory = true;
+                Time.timeScale = 0;
+                CurrentState = PlayerState.Pause;
+                UIInventory.gameObject.SetActive(true);
+                UIInventory.SetInventory(inventory);
+                UIInventory.ItemSlotTemplate.gameObject.SetActive(false);
+            }
+        }*/
     }
 
     private IEnumerator AttackCo()
@@ -133,7 +174,10 @@ public class PlayerMovement : MonoBehaviour
     }
     private void StartDialogue()
     {
-        if (InRange == true && Input.GetKeyDown(KeyCode.E)) npc.ActivateDialogue();
+        if (InRange == true && Input.GetKeyDown(KeyCode.E)) {
+            npc.ActivateDialogue();
+            Debug.Log("doglog");
+        }
     }
 
     public void PlayerTakeDamage(int damage){
