@@ -193,12 +193,12 @@ PrefabInstance:
     - target: {fileID: 2103840931216117658, guid: a68fa189383f8fd35bb671628df63c20,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.7612123
+      value: -0.69
       objectReference: {fileID: 0}
     - target: {fileID: 2103840931216117658, guid: a68fa189383f8fd35bb671628df63c20,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4255812
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 2103840931216117658, guid: a68fa189383f8fd35bb671628df63c20,
         type: 3}
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneToLoad: TestScene #1
   PlayerPosition: {x: -25, y: 7, z: 0}
-  PlayerStorage: {fileID: 11400000, guid: f4beeca3064114eec8f8015ce528af65, type: 2}
+  PlayerStorage: {fileID: 11400000, guid: 67191ef0857b3879eb46820ec0e26386, type: 2}
 --- !u!1 &1723024953
 GameObject:
   m_ObjectHideFlags: 0

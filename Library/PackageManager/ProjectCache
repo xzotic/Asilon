@@ -84,6 +84,9 @@ m_PackageAssets:
         - 3.2.4
         - 3.2.5
         - 3.2.6
+        - 3.2.9
+        - 3.2.10
+        - 3.2.11
         - 4.0.0
         - 4.0.1
         - 4.1.0
@@ -100,12 +103,24 @@ m_PackageAssets:
         - 5.0.2
         - 5.0.3
         - 5.0.4
+        - 5.0.5
+        - 5.0.6
+        - 5.0.7
         - 6.0.0-pre.1
         - 6.0.0-pre.2
         - 6.0.1
+        - 6.0.3
+        - 6.0.4
+        - 6.0.5
+        - 7.0.0-pre.2
+        - 7.0.0-pre.3
+        - 7.0.0
         compatible:
         - 5.0.4
-        verified: 5.0.4
+        - 5.0.5
+        - 5.0.6
+        - 5.0.7
+        verified: 5.0.7
       dependencies:
       - name: com.unity.2d.common
         version: 4.0.3
@@ -203,6 +218,7 @@ m_PackageAssets:
         - 5.0.0-pre.1
         - 5.0.0-pre.2
         - 5.0.0
+        - 5.0.1
         compatible:
         - 4.0.1
         verified: 4.0.1
@@ -275,6 +291,7 @@ m_PackageAssets:
         - 2.1.4
         - 2.1.5
         - 2.1.6
+        - 2.1.8
         - 3.0.0
         - 3.1.1
         - 3.1.3
@@ -285,9 +302,16 @@ m_PackageAssets:
         - 4.0.0
         - 4.0.1
         - 4.0.2
+        - 4.1.0
         - 5.0.0-pre.1
         - 5.0.0-pre.2
         - 5.0.1
+        - 5.0.3
+        - 5.0.4
+        - 6.0.0-pre.2
+        - 6.0.0-pre.3
+        - 6.0.0-pre.4
+        - 6.0.0
         compatible:
         - 4.0.2
         verified: 4.0.2
@@ -446,6 +470,8 @@ m_PackageAssets:
         - 3.0.13
         - 3.0.14
         - 3.0.15
+        - 3.0.16
+        - 3.0.17
         - 4.0.0
         - 4.0.1
         - 4.0.2
@@ -461,12 +487,22 @@ m_PackageAssets:
         - 5.0.2
         - 5.1.0
         - 5.1.1
+        - 5.1.2
+        - 5.1.3
+        - 5.1.4
         - 6.0.0-pre.1
         - 6.0.0-pre.2
         - 6.0.0
+        - 6.0.1
+        - 7.0.0-pre.2
+        - 7.0.0-pre.3
+        - 7.0.0
         compatible:
         - 5.1.1
-        verified: 5.1.1
+        - 5.1.2
+        - 5.1.3
+        - 5.1.4
+        verified: 5.1.4
       dependencies:
       - name: com.unity.mathematics
         version: 1.1.0
@@ -631,11 +667,19 @@ m_PackageAssets:
         - 2.6.3-preview.2
         - 2.6.3
         - 2.6.4
+        - 2.6.5
+        - 2.6.9
+        - 2.6.10
         - 2.7.1
         - 2.7.2
         - 2.7.3
+        - 2.7.4
+        - 2.7.5
+        - 2.7.8
         - 2.8.0-exp.1
         - 2.8.0-exp.2
+        - 2.8.0-pre.1
+        - 2.8.0
         compatible:
         - 2.5.0
         - 2.6.0-preview.2
@@ -650,12 +694,20 @@ m_PackageAssets:
         - 2.6.3-preview.2
         - 2.6.3
         - 2.6.4
+        - 2.6.5
+        - 2.6.9
+        - 2.6.10
         - 2.7.1
         - 2.7.2
         - 2.7.3
+        - 2.7.4
+        - 2.7.5
+        - 2.7.8
         - 2.8.0-exp.1
         - 2.8.0-exp.2
-        verified: 2.6.4
+        - 2.8.0-pre.1
+        - 2.8.0
+        verified: 2.6.10
       dependencies: []
       resolvedDependencies: []
       keywords:
@@ -740,7 +792,14 @@ m_PackageAssets:
         - 1.3.7
         - 1.3.8
         - 1.3.9
+        - 1.4.9
         - 1.5.7
+        - 1.6.0
+        - 1.7.1
+        - 1.8.0
+        - 1.9.0
+        - 1.10.2
+        - 1.11.2
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -753,7 +812,11 @@ m_PackageAssets:
         - 2.1.0-preview.6
         compatible:
         - 1.3.9
+        - 1.4.9
         - 1.5.7
+        - 1.6.0
+        - 1.8.0
+        - 1.10.2
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -831,6 +894,7 @@ m_PackageAssets:
         - 1.2.1
         - 1.2.2
         - 1.2.3
+        - 1.2.4
         compatible:
         - 1.0.2
         - 1.0.3
@@ -843,7 +907,8 @@ m_PackageAssets:
         - 1.2.1
         - 1.2.2
         - 1.2.3
-        verified: 1.2.3
+        - 1.2.4
+        verified: 1.2.4
       dependencies: []
       resolvedDependencies: []
       keywords: []
@@ -908,6 +973,8 @@ m_PackageAssets:
         - 7.5.2
         - 7.5.3
         - 7.6.0
+        - 7.7.0
+        - 7.7.1
         - 8.0.1
         - 8.1.0
         - 8.2.0
@@ -925,9 +992,13 @@ m_PackageAssets:
         - 10.3.2
         - 10.4.0
         - 10.5.0
+        - 10.5.1
+        - 10.6.0
+        - 10.7.0
         compatible:
         - 10.4.0
         - 10.5.0
+        - 10.5.1
         verified: 10.4.0
       dependencies:
       - name: com.unity.mathematics
@@ -1026,9 +1097,15 @@ m_PackageAssets:
         - 1.1.20
         - 1.1.22
         - 1.1.24
+        - 1.1.26
+        - 1.1.27
+        - 1.1.29
         compatible:
         - 1.1.24
-        verified: 1.1.24
+        - 1.1.26
+        - 1.1.27
+        - 1.1.29
+        verified: 1.1.29
       dependencies:
       - name: com.unity.ext.nunit
         version: 1.0.6
@@ -1144,6 +1221,7 @@ m_PackageAssets:
         - 1.5.4
         - 1.5.5
         - 1.5.6
+        - 1.6.0-preview.1
         - 2.0.0
         - 2.0.1-preview.1
         - 2.0.1
@@ -1165,6 +1243,7 @@ m_PackageAssets:
         - 2.1.4
         - 2.1.5
         - 2.1.6
+        - 2.2.0-preview.1
         - 3.0.0-preview.1
         - 3.0.0-preview.3
         - 3.0.0-preview.4
@@ -1182,12 +1261,14 @@ m_PackageAssets:
         - 3.0.4
         - 3.0.5
         - 3.0.6
+        - 3.2.0-pre.1
         compatible:
         - 3.0.1
         - 3.0.3
         - 3.0.4
         - 3.0.5
         - 3.0.6
+        - 3.2.0-pre.1
         verified: 3.0.6
       dependencies:
       - name: com.unity.ugui
@@ -1291,6 +1372,7 @@ m_PackageAssets:
         - 1.4.5
         - 1.4.6
         - 1.4.7
+        - 1.4.8
         - 1.5.0-pre.2
         - 1.5.0-preview.1
         - 1.5.0-preview.2
@@ -1302,11 +1384,17 @@ m_PackageAssets:
         - 1.5.1-pre.3
         - 1.5.2
         - 1.5.4
+        - 1.5.5
+        - 1.5.6
         - 1.6.0-pre.1
         - 1.6.0-pre.3
         - 1.6.0-pre.4
+        - 1.6.0-pre.5
+        - 1.6.1
+        - 1.6.2
         compatible:
         - 1.4.7
+        - 1.4.8
         - 1.5.0-pre.2
         - 1.5.0-preview.1
         - 1.5.0-preview.2
@@ -1318,10 +1406,15 @@ m_PackageAssets:
         - 1.5.1-pre.3
         - 1.5.2
         - 1.5.4
+        - 1.5.5
+        - 1.5.6
         - 1.6.0-pre.1
         - 1.6.0-pre.3
         - 1.6.0-pre.4
-        verified: 1.4.7
+        - 1.6.0-pre.5
+        - 1.6.1
+        - 1.6.2
+        verified: 1.4.8
       dependencies:
       - name: com.unity.modules.director
         version: 1.0.0
@@ -1399,6 +1492,7 @@ m_PackageAssets:
         - 0.1.16-preview
         - 0.1.17-preview
         - 0.1.18-preview
+        - 0.1.19-preview
         compatible:
         - 0.1.5-preview
         - 0.1.6-preview
@@ -1413,6 +1507,7 @@ m_PackageAssets:
         - 0.1.16-preview
         - 0.1.17-preview
         - 0.1.18-preview
+        - 0.1.19-preview
         verified: 
       dependencies:
       - name: com.unity.sysroot
@@ -3169,9 +3264,13 @@ m_PackageAssets:
         - 1.6.2-preview
         - 1.6.3-preview
         - 1.6.4-preview
+        - 1.7.0-preview
+        - 1.8.0-preview
+        - 1.8.1-preview
         - 2.0.0-pre.1
         - 2.0.0-pre.2
         - 2.0.0
+        - 2.2.0
         compatible:
         - 1.5.0-preview
         - 1.6.0-preview.1
@@ -3179,6 +3278,9 @@ m_PackageAssets:
         - 1.6.2-preview
         - 1.6.3-preview
         - 1.6.4-preview
+        - 1.7.0-preview
+        - 1.8.0-preview
+        - 1.8.1-preview
         verified: 
       dependencies:
       - name: com.unity.modules.tilemap
@@ -3702,6 +3804,8 @@ m_PackageAssets:
         - 7.5.2
         - 7.5.3
         - 7.6.0
+        - 7.7.0
+        - 7.7.1
         - 8.0.1
         - 8.1.0
         - 8.2.0
@@ -3720,9 +3824,13 @@ m_PackageAssets:
         - 10.3.2
         - 10.4.0
         - 10.5.0
+        - 10.5.1
+        - 10.6.0
+        - 10.7.0
         compatible:
         - 10.4.0
         - 10.5.0
+        - 10.5.1
         verified: 10.4.0
       dependencies:
       - name: com.unity.ugui
@@ -3849,6 +3957,8 @@ m_PackageAssets:
         - 7.5.2
         - 7.5.3
         - 7.6.0
+        - 7.7.0
+        - 7.7.1
         - 8.0.1
         - 8.1.0
         - 8.2.0
@@ -3866,9 +3976,13 @@ m_PackageAssets:
         - 10.3.2
         - 10.4.0
         - 10.5.0
+        - 10.5.1
+        - 10.6.0
+        - 10.7.0
         compatible:
         - 10.4.0
         - 10.5.0
+        - 10.5.1
         verified: 10.4.0
       dependencies:
       - name: com.unity.render-pipelines.core
@@ -3947,6 +4061,10 @@ m_PackageAssets:
         - 5.0.0-pre.1
         - 5.0.0-pre.2
         - 5.0.0
+        - 6.0.0-pre.2
+        - 6.0.0-pre.3
+        - 6.0.0-pre.4
+        - 6.0.0
         compatible:
         - 4.0.2
         - 4.0.3
@@ -4021,17 +4139,21 @@ m_PackageAssets:
         - 2.0.5
         - 2.0.6
         - 2.1.0
+        - 2.1.1
         - 3.0.0
         - 3.0.1
         - 3.0.2
         - 4.0.0
         - 4.0.1
+        - 4.0.2
         - 5.0.0-pre.1
         - 5.0.0-pre.2
         - 5.0.0
+        - 5.0.1
         compatible:
         - 4.0.1
-        verified: 4.0.1
+        - 4.0.2
+        verified: 4.0.2
       dependencies: []
       resolvedDependencies: []
       keywords:

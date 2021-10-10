@@ -24,7 +24,7 @@ namespace RPGM.Gameplay
 
         IEnumerator OnTriggerEnter2D(Collider2D other)
         {
-            if (other.tag == "Player")
+            if (other.tag == "Player" && other.isTrigger == false)
             {
                 transparency = 1f;
                 SpriteRenderer.color = new Color(1,1,1,transparency); 
@@ -44,7 +44,7 @@ namespace RPGM.Gameplay
 
         IEnumerator OnTriggerExit2D(Collider2D other)
         {
-            if (other.tag == "Player")
+            if (other.tag == "Player" && other.isTrigger == false)
             {
                 transparency = 0.2f;
                 SpriteRenderer.color = new Color(1,1,1,transparency); 

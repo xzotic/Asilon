@@ -17,20 +17,21 @@ public class Turret : Enemy
     }
     public override void CheckDistance()
     {
-        if (Vector2.Distance(transform.position,target.position)<=chaseRadius&& touched == false &&
-            Vector2.Distance(transform.position,target.position)>attackRadius&&CanFire)
+        if (Vector2.Distance(transform.position,target.position)<=chaseRadius&& touched == false && CanFire)
         {
             // @ts-ignore
-            if (currentState == EnemyState.idle || currentState == EnemyState.walk) {  
+            if ((currentState == EnemyState.idle || currentState == EnemyState.walk) && GameObject.FindGameObjectWithTag("Player").GetComponent<Stun>().IFrame == false) {  
+                CanFire=false;
                 Vector3 tempVector = target.transform.position-transform.position;
                 GameObject current = Instantiate(projectile,transform.position,Quaternion.identity);
                 ChangeState(EnemyState.walk);
-                current.GetComponent<Projectile>().Launch(tempVector);
-                CanFire=false;
+                if ( GameObject.FindGameObjectWithTag("Player").GetComponent<Stun>().IFrame==false) current.GetComponent<Projectile>().Launch(tempVector);
                 anim.SetBool("WakeUp", true);
             }
         } else if (Vector2.Distance(transform.position,target.position)>chaseRadius) {
             anim.SetBool("WakeUp",false);
         }
     }
+
+    //script is real fucked up needs to be fixed
 }

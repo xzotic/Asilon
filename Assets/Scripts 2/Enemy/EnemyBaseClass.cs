@@ -54,6 +54,8 @@ public class EnemyBaseClass : MonoBehaviour
             MakeLoot();
             StartCoroutine(FadeTo(0.0f,0.6f));
             GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Stun>().IFrame = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Stun>().col.enabled = true;
             Destroy(this.gameObject);
             //this.gameObject.SetActive(false);
         }

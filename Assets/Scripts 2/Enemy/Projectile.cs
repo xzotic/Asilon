@@ -27,14 +27,11 @@ public class Projectile : MonoBehaviour
         rigid.velocity= InitialVelo * MoveSpeed;
     }
     private IEnumerator OnTriggerEnter2D(Collider2D other) {
-        /*PlayerMovement pmrb = other.GetComponent<PlayerMovement>();
-        SpriteRenderer pmsr = other.GetComponent<SpriteRenderer>();
-        pmsr.color = new Color(1,1,1,1);
-        pmrb.CurrentState = PlayerMovement.PlayerState.Walking;  
-        Debug.Log("hello");*/
-        this.gameObject.GetComponent<SpriteRenderer>().enabled=false;
-        this.transform.GetChild(0).GetComponent<Collider2D>().enabled = false;
-        yield return new WaitForSeconds(1f);
-        Destroy(this.gameObject);
+        if (other.isTrigger == false) {
+            this.gameObject.GetComponent<SpriteRenderer>().enabled=false;
+            this.transform.GetChild(0).GetComponent<Collider2D>().enabled = false;
+            yield return new WaitForSeconds(1f);
+            Destroy(this.gameObject);
+        }
     }
 }

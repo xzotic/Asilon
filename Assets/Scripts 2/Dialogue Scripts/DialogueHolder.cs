@@ -12,6 +12,8 @@ namespace DialogueSystem
         public string reply;
         public GameObject OptionHolder;
         public bool ButtonPressed;
+        //public GlobalManager gm;
+        //public bool IsReply;
 
         private void OnEnable()
         {
@@ -33,6 +35,7 @@ namespace DialogueSystem
 
         private IEnumerator DialogueSequence()
         {
+            
             for (int i = 0; i <transform.childCount;i++)
             {
                 Deactivate();
@@ -65,9 +68,12 @@ namespace DialogueSystem
                     transform.gameObject.GetComponent<Image>().enabled=true;
                 } //
             }
+
+
             gameObject.SetActive(false);
             (GameObject.FindWithTag("NameBox")).SetActive(false);
             (GameObject.FindWithTag("SpriteBox")).SetActive(false);
+            
         }
 
         private void Deactivate()

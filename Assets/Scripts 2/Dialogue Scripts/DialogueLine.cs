@@ -11,6 +11,7 @@ namespace DialogueSystem
         [SerializeField] private Text TextHolder;
         [SerializeField] public Text NameHolder;
         [SerializeField] private Image ImageHolder;
+        [SerializeField] private GlobalManager gm;
 
         [Header("Text Options")]
         [SerializeField] [TextArea(1, 4)] private string input;
@@ -19,24 +20,51 @@ namespace DialogueSystem
         [SerializeField] private Sprite CharSprite;
 
         [Header("Chest things")]
-        [SerializeField] private Item item;
+        [SerializeField] public Item2 item;
         [SerializeField] private Inventory inventory;
         [SerializeField] private Collider2D TriggerCol;
         [SerializeField] private bool IsItemFind;
+        [SerializeField] private string ChestIndex;
+        private string tempstring;
 
 
         private IEnumerator LineAppear;
+        private void Awake() {
+            tempstring = input;
+        }
         private void OnEnable() 
         {
             ResetLine();
-            LineAppear = WriteText(input,TextHolder,delay,NameHolder, NpcName, IsItemFind, ImageHolder, CharSprite, item, inventory);
+    
+            if (IsItemFind) { 
+                int listcount = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().inventory.itemList.Count;
+                if (listcount < 56) { 
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().inventory.AddItem(item);
+                        ItemTaken = true;
+                    }
+                else ItemTaken = false;
+
+                if (ItemTaken) {
+                    PlayerPrefs.SetInt(ChestIndex,1);
+                    input = tempstring;
+                }
+                else {
+                    tempstring = input;
+                    input = "There is no space left in your inventory";
+                }
+            }
+
+            LineAppear = WriteText(input,TextHolder,delay,NameHolder, NpcName, IsItemFind, ImageHolder, CharSprite, item);//, inventory);
             StartCoroutine(LineAppear);
-            if (IsItemFind) TriggerCol.enabled=false;
+            
         }
+        //private void OnDisable(){
+            //TextHolder.text="";
+        //}
 
         private void Update()
         {
-            if ((Input.GetKeyDown(KeyCode.Space))&&GameObject.FindGameObjectsWithTag("DialogueChoiceButton").Length==0)
+            if ((Input.GetKeyDown(KeyCode.Space))&&GameObject.FindGameObjectsWithTag("DialogueChoiceButton").Length==0) //&& gm.IsInteracting == true)
             {
                 if (TextHolder.text != input) 
                 {

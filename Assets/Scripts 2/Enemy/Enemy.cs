@@ -33,7 +33,7 @@ public class Enemy : EnemyBaseClass
             Vector2.Distance(transform.position,target.position)>attackRadius)
         {
             //anim.SetBool("IsMove",true);
-            if (currentState == EnemyState.idle || currentState == EnemyState.walk) {  
+            if ((currentState == EnemyState.idle || currentState == EnemyState.walk) && GameObject.FindGameObjectWithTag("Player").GetComponent<Stun>().IFrame == false) {  
                 anim.SetBool("WakeUp", true);
                 Vector3 temp = Vector2.MoveTowards(transform.position,target.position,enemyMoveSpeed*Time.deltaTime);
                 ChangeAnim(temp-transform.position);

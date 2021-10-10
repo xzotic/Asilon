@@ -15,7 +15,7 @@ Branching Dialogue:
 (!! Branching dialogues can only have one main Text object as of now dont know how fix !!)
 
 Enemy:
--Add enemy sprites and colliders and RigidBody2D and shit (Trigger collider 2d must be set as child object no idea why)
+-Add enemy sprites and colliders and RigidBody2D and shit (Attack Trigger collider 2d must be set as child object no idea why)
 -Add Enemy Script (Patrol Enemy for patrolling enemies and turret for shooting enemies and both for both) (if there is patrol enemy no need normal enemy, turret does need normal enemy tho)
 -Add tag and layer "Enemy", layer "Enemy Projectile" for enemy projectiles
 -Add Stun script

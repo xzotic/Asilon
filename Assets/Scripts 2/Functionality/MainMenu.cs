@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private int SceneToLoad;
     [SerializeField] private GlobalManager globe;
     [SerializeField] private Inventory inventory;
+    [SerializeField] private PlayerMovement playerMovement;
+    private string jsonGlobal;
     private void Start() {
+        //string json = File.ReadAllText(Application.dataPath + "/Resources/globalsave.json");
+        //GlobalManager loaded = JsonUtility.FromJson<GlobalManager>(jsonGlobal);
         globe.SceneIndex = SceneToLoad;
     }
 
@@ -17,11 +22,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void SaveGame(){
-        string jsonGlobal = JsonUtility.ToJson(globe);
-        string jsonIventory = JsonUtility.ToJson(inventory);
-        Debug.Log(jsonGlobal);
-        Debug.Log(jsonIventory);
+    public void InvUI() {
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        playerMovement.UIInventory.gameObject.SetActive(true);
+        playerMovement.UIInventory.SetInventory(playerMovement.inventory);
+        playerMovement.UIInventory.ItemSlotTemplate.gameObject.SetActive(false);
+        playerMovement.IsInventory = true;
     }
     
     public void QuitGame()

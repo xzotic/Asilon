@@ -7,6 +7,8 @@ public class Stun : MonoBehaviour
 {   
     public float knockback;
     public int damage;
+    public bool IFrame;
+    public Collider2D col;
 
     private void Update() {
         
@@ -36,10 +38,19 @@ public class Stun : MonoBehaviour
                     sr.color = new Color(1,i,i,1);
                     yield return new WaitForSeconds(0.08f);                                 //Apply color change  
                 }
-                sr.color = new Color(1,1,1,1);
+
+                
 
                 rb.GetComponent<PlayerMovement>().animator.enabled=true;
                 pmrb.CurrentState = PlayerMovement.PlayerState.Walking;                      //End Stagger
+
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Stun>().IFrame = true;
+                sr.color = new Color(1,1,1,0.8f);
+                col.enabled = false;
+                yield return new WaitForSeconds(2f); 
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Stun>().IFrame = false;
+                sr.color = new Color(1,1,1,1);
+                col.enabled = true;
             }
         }
 
@@ -64,4 +75,3 @@ public class Stun : MonoBehaviour
         }
     }
 }
-

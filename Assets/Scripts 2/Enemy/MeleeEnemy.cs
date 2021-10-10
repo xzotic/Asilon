@@ -22,7 +22,7 @@ public class MeleeEnemy : Enemy
             anim.SetBool("WakeUp",false);
             ChangeState(EnemyState.idle);
         } else if (Vector2.Distance(transform.position,target.position)<=chaseRadius&& touched == false && Vector2.Distance(transform.position,target.position)<=attackRadius){
-            if (currentState == EnemyState.idle || currentState == EnemyState.walk) StartCoroutine(AttackCo());
+            if ((currentState == EnemyState.idle || currentState == EnemyState.walk) && GameObject.FindGameObjectWithTag("Player").GetComponent<Stun>().IFrame == false) StartCoroutine(AttackCo());
         }
     }
 
@@ -30,7 +30,6 @@ public class MeleeEnemy : Enemy
         currentState = EnemyState.attack;
         anim.SetBool("IsAttack", true);
         yield return new WaitForSeconds(AnimLength);
-        //if (touched == false && Vector2.Distance(transform.position,target.position)>=attackRadius){
         currentState = EnemyState.walk;
         anim.SetBool("IsAttack",false); 
     }
